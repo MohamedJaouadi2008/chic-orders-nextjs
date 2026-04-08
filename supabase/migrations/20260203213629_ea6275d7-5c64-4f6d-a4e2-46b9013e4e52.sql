@@ -1,0 +1,1 @@
+DELETE FROM categories WHERE id = '7d71b850-6881-4ff5-8e54-c8dfad05027d';

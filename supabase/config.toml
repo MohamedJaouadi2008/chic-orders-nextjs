@@ -1,0 +1,13 @@
+project_id = "nbyeexxzqbgtjmxldbjc"
+
+[functions.notify-order]
+verify_jwt = false
+
+[functions.send-newsletter-welcome]
+verify_jwt = false
+
+[functions.send-order-confirmation]
+verify_jwt = false
+
+[functions.clear-orders-log]
+verify_jwt = false

@@ -1,0 +1,354 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Miss Boutique - Luxury Women's Intimate Apparel Design System
+   All colors MUST be HSL for Tailwind compatibility.
+*/
+
+@layer base {
+  :root {
+    /* MISS Boutique Luxury Palette - Black / Gold / White */
+    --background: 240 8% 4%;           /* Rich Black #0B0B0D */
+    --foreground: 45 20% 96%;          /* Ivory White #F7F6F3 */
+
+    --card: 240 8% 8%;                 /* Slightly lighter black */
+    --card-foreground: 45 20% 96%;     /* Ivory White */
+
+    --popover: 240 8% 10%;             /* Dark popover */
+    --popover-foreground: 45 20% 96%;  /* Ivory White */
+
+    --primary: 43 46% 54%;             /* Luxury Gold #C9A24D */
+    --primary-foreground: 240 8% 4%;   /* Black */
+
+    --secondary: 240 8% 12%;           /* Charcoal accent */
+    --secondary-foreground: 45 20% 96%;/* Ivory White */
+
+    --muted: 240 5% 18%;               /* Muted dark */
+    --muted-foreground: 45 10% 60%;    /* Muted ivory */
+
+    --accent: 43 46% 54%;              /* Luxury Gold */
+    --accent-foreground: 240 8% 4%;    /* Black */
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 45 20% 96%;
+
+    --border: 43 20% 20%;              /* Subtle gold-tinted border */
+    --input: 240 8% 12%;               /* Dark input background */
+    --ring: 43 46% 54%;                /* Gold focus ring */
+
+    --radius: 0.25rem;
+
+    /* Sidebar (Admin) - keep darker */
+    --sidebar-background: 240 8% 6%;
+    --sidebar-foreground: 45 20% 96%;
+    --sidebar-primary: 43 46% 54%;
+    --sidebar-primary-foreground: 240 8% 4%;
+    --sidebar-accent: 240 8% 12%;
+    --sidebar-accent-foreground: 45 20% 96%;
+    --sidebar-border: 240 8% 15%;
+    --sidebar-ring: 43 46% 54%;
+
+    /* Custom boutique tokens */
+    --gold: 43 46% 54%;
+    --gold-light: 43 46% 65%;
+    --gold-dark: 43 46% 40%;
+    --ivory: 45 20% 96%;
+    --boutique-black: 240 8% 4%;
+    --charcoal: 240 8% 12%;
+  }
+
+  .dark {
+    /* Dark mode uses same palette */
+    --background: 240 8% 4%;
+    --foreground: 45 20% 96%;
+
+    --card: 240 8% 8%;
+    --card-foreground: 45 20% 96%;
+
+    --popover: 240 8% 10%;
+    --popover-foreground: 45 20% 96%;
+
+    --primary: 43 46% 54%;
+    --primary-foreground: 240 8% 4%;
+
+    --secondary: 240 8% 12%;
+    --secondary-foreground: 45 20% 96%;
+
+    --muted: 240 5% 18%;
+    --muted-foreground: 45 10% 60%;
+
+    --accent: 43 46% 54%;
+    --accent-foreground: 240 8% 4%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 45 20% 96%;
+
+    --border: 43 20% 20%;
+    --input: 240 8% 12%;
+    --ring: 43 46% 54%;
+
+    --sidebar-background: 240 8% 6%;
+    --sidebar-foreground: 45 20% 96%;
+    --sidebar-primary: 43 46% 54%;
+    --sidebar-primary-foreground: 240 8% 4%;
+    --sidebar-accent: 240 8% 12%;
+    --sidebar-accent-foreground: 45 20% 96%;
+    --sidebar-border: 240 8% 15%;
+    --sidebar-ring: 43 46% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  /* Luxury typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-light tracking-wide;
+  }
+
+  /* Smooth transitions for luxury feel */
+  a, button {
+    @apply transition-all duration-300;
+  }
+}
+
+@layer components {
+  /* Product card luxury hover effect */
+  .product-card {
+    @apply relative overflow-hidden;
+  }
+
+  .product-card-image {
+    @apply transition-transform duration-500 ease-out;
+  }
+
+  .product-card:hover .product-card-image {
+    @apply scale-105;
+  }
+
+  /* Sale badge */
+  .sale-badge {
+    @apply absolute top-3 right-3 z-10 bg-primary text-primary-foreground px-3 py-1 text-xs font-medium uppercase tracking-wider;
+  }
+
+  /* Luxury button styles - refined for gold palette */
+  .btn-luxury {
+    @apply bg-primary text-primary-foreground px-8 py-3 text-sm uppercase tracking-widest font-medium hover:bg-primary/80 transition-all duration-500;
+  }
+
+  .btn-outline-luxury {
+    @apply border border-primary/60 text-primary px-8 py-3 text-sm uppercase tracking-widest font-medium hover:border-primary hover:bg-primary/10 transition-all duration-500;
+  }
+
+  .btn-outline-gold {
+    @apply border border-primary text-primary px-8 py-4 text-sm uppercase tracking-[0.2em] font-light hover:bg-primary hover:text-primary-foreground transition-all duration-500;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for luxury feel */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Aspect ratios for product images */
+  .aspect-product {
+    aspect-ratio: 4/5;
+  }
+
+  .aspect-product-tall {
+    aspect-ratio: 3/4;
+  }
+
+  /* Hero gradient - subtle gold ambient glow */
+  .hero-gradient {
+    background: 
+      radial-gradient(ellipse at 20% 80%, hsl(43 46% 54% / 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, hsl(43 46% 54% / 0.05) 0%, transparent 50%);
+    background-size: 200% 200%;
+  }
+
+  /* Scroll reveal states */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Staggered animations */
+  .stagger-1 { transition-delay: 0.1s; }
+  .stagger-2 { transition-delay: 0.2s; }
+  .stagger-3 { transition-delay: 0.3s; }
+  .stagger-4 { transition-delay: 0.4s; }
+
+  /* Decorative floating elements */
+  .floating-orb {
+    @apply absolute rounded-full blur-3xl opacity-30;
+  }
+
+  /* Quick view overlay */
+  .quick-view-overlay {
+    @apply absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center;
+  }
+
+  /* Category tile border animation */
+  .category-tile::before {
+    content: '';
+    @apply absolute inset-0 border border-transparent transition-all duration-500;
+  }
+
+  .category-tile:hover::before {
+    @apply border-foreground/20;
+  }
+
+  /* Glow effect on hover */
+  .hover-glow {
+    @apply transition-shadow duration-300;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.3);
+  }
+
+  /* Magnetic button effect */
+  .magnetic-button {
+    @apply transition-transform duration-200;
+  }
+
+  .magnetic-button:hover {
+    transform: translateY(-2px);
+  }
+
+  .magnetic-button:active {
+    transform: translateY(0);
+  }
+
+  /* Interactive text underline */
+  .text-underline-animated {
+    @apply relative inline-block;
+  }
+
+  .text-underline-animated::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-px bg-current transition-all duration-300;
+  }
+
+  .text-underline-animated:hover::after {
+    @apply w-full;
+  }
+
+  /* Glassmorphism card */
+  .glass-card {
+    @apply backdrop-blur-md bg-background/30 border border-foreground/10;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-primary;
+    background-size: 200% auto;
+    animation: gradient-shift 3s ease-in-out infinite;
+  }
+
+  /* Fix date input visibility in dark mode */
+  input[type="date"] {
+    @apply text-foreground;
+    color-scheme: dark;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+  }
+
+  /* 3D Perspective for cards */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  /* Enhanced shine sweep animation */
+  .shine-sweep {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shine-sweep::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      transparent 30%,
+      hsl(var(--foreground) / 0.1) 50%,
+      transparent 70%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.7s ease-in-out;
+  }
+
+  .shine-sweep:hover::after {
+    transform: translateX(100%);
+  }
+
+  /* Animated border glow */
+  .border-glow {
+    position: relative;
+  }
+
+  .border-glow::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(
+      45deg,
+      hsl(var(--primary)),
+      hsl(var(--secondary)),
+      hsl(var(--primary))
+    );
+    background-size: 200% 200%;
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .border-glow:hover::before {
+    opacity: 0.5;
+  }
+
+  /* Pulsing glow behind elements */
+  .pulse-glow-bg {
+    position: relative;
+  }
+
+  .pulse-glow-bg::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(
+      circle,
+      hsl(var(--primary) / 0.3) 0%,
+      transparent 70%
+    );
+    animation: pulse-glow 3s ease-in-out infinite;
+    z-index: -1;
+  }
+}

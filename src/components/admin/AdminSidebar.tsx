@@ -63,7 +63,7 @@ export function AdminSidebar({
           {/* Logo */}
           <div className="p-6 border-b border-sidebar-border">
             <Link href="/" className="flex items-center">
-              <img src={logo} alt="سيدتي" className="h-12 w-auto" />
+              <img src={logo.src} alt="سيدتي" className="h-12 w-auto" />
             </Link>
           </div>
 

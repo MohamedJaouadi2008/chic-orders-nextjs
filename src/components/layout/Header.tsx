@@ -18,7 +18,7 @@ export function Header() {
             className="flex items-center hover:opacity-80 transition-opacity"
           >
             <img 
-              src={logo} 
+              src={logo.src} 
               alt="سيدتي" 
               className="h-14 md:h-16 w-auto"
             />

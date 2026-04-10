@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { supabase } from '@/integrations/supabase/client';
-import ProductPage from '@/pages/ProductPage';
+import ProductPage from '@/views/ProductPage';
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const { slug } = params;

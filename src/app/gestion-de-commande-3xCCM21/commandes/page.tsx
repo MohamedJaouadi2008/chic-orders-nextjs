@@ -1,5 +1,5 @@
 "use client";
-import PageComponent from "@/pages/admin/AdminOrdersPage";
+import PageComponent from "@/views/admin/AdminOrdersPage";
 
 export default function Page() {
   return <PageComponent />;

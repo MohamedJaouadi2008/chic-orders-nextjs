@@ -1,29 +1,40 @@
 import { Metadata } from 'next';
-import { supabase } from '@/integrations/supabase/client';
+import { supabaseServer } from '@/integrations/supabase/server';
 import ProductPage from '@/views/ProductPage';
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
 
-  const { data: product } = await supabase
+  const { data: product } = await supabaseServer
     .from('products')
     .select('*')
     .eq('slug', slug)
     .single();
 
   if (!product) {
-    return { title: 'Produit Introuvable - Chic Orders' };
+    return {
+      title: 'Produit Introuvable - سيدتي',
+      description: 'Boutique de mode féminine de luxe. vêtements de qualité pour la femme moderne.',
+    };
   }
 
   const description = product.description
     ? product.description.slice(0, 155)
-    : `Achetez ${product.name}. Livraison disponible dans toute la Tunisie.`;
+    : `Achetez ${product.name} chez سيدتي. Livraison disponible dans toute la Tunisie.`;
 
   return {
-    title: `${product.name} - Chic Orders`,
+    title: `${product.name} - سيدتي`,
     description,
     openGraph: {
-      title: `${product.name} - Chic Orders`,
+      title: `${product.name} - سيدتي`,
+      description,
+      images: product.images && product.images.length > 0 ? [product.images[0]] : [],
+      type: 'website',
+      siteName: 'سيدتي',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${product.name} - سيدتي`,
       description,
       images: product.images && product.images.length > 0 ? [product.images[0]] : [],
     },

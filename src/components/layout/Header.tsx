@@ -20,7 +20,7 @@ export function Header() {
             <img 
               src={logo.src} 
               alt="سيدتي" 
-              className="h-14 md:h-16 w-auto"
+              className="h-10 md:h-12 w-auto"
             />
           </Link>
 

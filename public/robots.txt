@@ -12,8 +12,6 @@ Allow: /
 
 User-agent: *
 Allow: /
- 
- Sitemap: https://mylady.lovable.app/functions/v1/sitemap
- 
- # Block admin routes
- Disallow: /gestion-de-commande-3xCCM21
+Disallow: /gestion-de-commande-3xCCM21
+
+Sitemap: https://www.sayedati.tn/sitemap.xml

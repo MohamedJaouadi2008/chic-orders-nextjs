@@ -2,6 +2,17 @@ import { Metadata } from 'next';
 import { supabaseServer } from '@/integrations/supabase/server';
 import ProductPage from '@/views/ProductPage';
 
+// Pre-render all product pages at build time for SEO
+export async function generateStaticParams() {
+  const { data: products } = await supabaseServer
+    .from('products')
+    .select('slug');
+
+  return (products || []).map((product) => ({
+    slug: product.slug,
+  }));
+}
+
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const { slug } = await params;
 

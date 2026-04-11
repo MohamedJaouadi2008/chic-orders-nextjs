@@ -11,16 +11,16 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-24 md:h-36">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link 
             href="/" 
-            className="flex items-center hover:opacity-80 transition-opacity translate-y-2 md:translate-y-4"
+            className="flex items-center hover:opacity-80 transition-opacity"
           >
             <img 
               src={logo.src} 
               alt="سيدتي" 
-              className="h-32 md:h-48 w-auto object-contain"
+              className="h-14 md:h-16 w-auto"
             />
           </Link>
 

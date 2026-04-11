@@ -5,8 +5,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import "../index.css";
 
 export const metadata: Metadata = {
-  title: "Chic Orders",
-  description: "Boutique en ligne",
+  title: "سيدتي",
+  description: "Boutique de mode féminine de luxe. vêtements de qualité pour la femme moderne.",
 };
 
 export default function RootLayout({

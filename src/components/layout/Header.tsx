@@ -11,7 +11,7 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20 md:h-24">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link 
             href="/" 
@@ -20,7 +20,7 @@ export function Header() {
             <img 
               src={logo.src} 
               alt="سيدتي" 
-              className="h-20 md:h-24 py-2 w-auto object-contain"
+              className="h-14 md:h-16 w-auto"
             />
           </Link>
 

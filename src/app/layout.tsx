@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Providers } from "@/components/Providers";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
+import { Analytics } from "@vercel/analytics/next";
 import "../index.css";
 
 export const metadata: Metadata = {
@@ -43,6 +44,7 @@ export default function RootLayout({
       <body>
         <Providers>
           {children}
+          <Analytics />
           <Toaster />
           <Sonner />
         </Providers>
